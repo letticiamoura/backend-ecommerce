@@ -25,8 +25,8 @@ const User = sequelize.define('User', {
         allowNull: false
     },
     active: {
-        type: DataTypes.INTEGER,
-        defaultValue: 1
+        type: DataTypes.BOOLEAN,
+        defaultValue: true
     },
     createdAt: {
         type: DataTypes.DATE,
@@ -41,7 +41,8 @@ const User = sequelize.define('User', {
     }
 }, {
     tableName: 'users',
-    timestamps: false
+    timestamps: false, 
 });
 
 export default User;
+

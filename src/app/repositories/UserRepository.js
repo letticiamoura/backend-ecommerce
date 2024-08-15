@@ -6,8 +6,8 @@ class UserRepository {
   async handleRequest(promise, errorMsg) {
     try {
       return await promise;
-    } catch (error) {
-      console.error("Error in handleRequest:", error);
+    } catch (err) {
+      console.error("Erro na manipulação da solicitação", err);
       throw new Error(errorMsg);
     }
   }

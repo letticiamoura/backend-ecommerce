@@ -3,7 +3,7 @@ import routes from './app/routes/index.js';
 
 const app = express();
 
-//Indicando para o express ler o body com json
+//Indicando para o Express ler o body como JSON
 app.use(express.json());
 
 //Usando o Router
