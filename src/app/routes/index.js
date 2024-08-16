@@ -2,6 +2,7 @@ import { Router } from "express";
 
 import UserController from "../controllers/UserController.js";
 import ProductController from "../controllers/ProductController.js";
+import CategoryController from "../controllers/CategoryController.js";
 
 const router = Router();
 
@@ -39,5 +40,22 @@ router.put('/products/:id', ProductController.update);
 
 //Método DELETE
 router.delete('/products/:id', ProductController.delete);
+
+//          CATEGORIES
+
+//Método GET
+router.get('/category/search', CategoryController.index);
+
+//Pesquisando user por ID
+router.get('/category/:id', CategoryController.show);
+
+//Método POST
+router.post('/category', CategoryController.store);
+
+//Método PUT
+router.put('/category/:id', CategoryController.update);
+
+//Método DELETE
+router.delete('/category/:id', CategoryController.delete);
 
 export default router;
