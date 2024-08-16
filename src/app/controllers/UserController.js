@@ -8,23 +8,23 @@ class UserController {
       //Chamando o repositório p/ listar todos os usuários
       const users = await UserRepository.findAll();
       res.status(200).json(users);
-    } catch (error) {
-      res.status(500).json({ error: error.message });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
     }
   }
 
   //Método p/ obter um usuário específico pelo ID
   async show(req, res) {
     try {
-      //Chama o repositório p/ listar um usuário pelo ID
+      //Chama o repositório para listar um usuário pelo ID
       const user = await UserRepository.findById(req.params.id);
       //Se o usuário não for encontrado, responde com status 404
       if (!user) {
         return res.status(404).json({ error: "Usuário não encontrado" });
       }
       res.status(200).json(user);
-    } catch (error) {
-      res.status(500).json({ error: error.message });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
     }
   }
 
@@ -34,8 +34,8 @@ class UserController {
       //Chama o repositório p/ criar um novo usuário
       const newUser = await UserRepository.create(req.body);
       res.status(201).json(newUser);
-    } catch (error) {
-      res.status(500).json({ error: error.message });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
     }
   }
 
@@ -49,12 +49,12 @@ class UserController {
         return res.status(404).json({ error: "Usuário não encontrado ou nenhuma alteração realizada" });
       }
       res.status(200).json({ message: "Usuário atualizado com sucesso" });
-    } catch (error) {
-      res.status(500).json({ error: error.message });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
     }
   }
 
-  //Método para deletar um usuário
+  //Método p/ deletar um usuário
   async delete(req, res) {
     try {
       //Chama o repositório p/ apagar o usuário pelo ID
@@ -64,8 +64,8 @@ class UserController {
         return res.status(404).json({ error: "Usuário não encontrado" });
       }
       res.status(200).json({ message: "Usuário deletado com sucesso" });
-    } catch (error) {
-      res.status(500).json({ error: error.message });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
     }
   }
 }

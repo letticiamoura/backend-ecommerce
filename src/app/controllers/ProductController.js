@@ -6,8 +6,8 @@ class ProductController {
   async index(req, res) {
     try {
       //Chamando o repositório p/ listar todos os produtos
-      const product = await ProductRepository.findAll();
-      res.status(200).json(product);
+      const products = await ProductRepository.findAll();
+      res.status(200).json(products);
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
@@ -24,7 +24,7 @@ class ProductController {
       }
       res.status(200).json(product);
     } catch (err) {
-      res.status(404).json({ error: err.message });
+      res.status(500).json({ error: err.message });
     }
   }
 
@@ -54,10 +54,10 @@ class ProductController {
     }
   }
 
-  //Método para deletar um produto
+  //Método p/ deletar um produto
   async delete(req, res) {
     try {
-      //Chama o repositório p/ apagar o produto pelo ID
+      //Chama o repositório p/ deletar o produto pelo ID
       const deleted = await ProductRepository.delete(req.params.id);
       //Se o produto não for encontrado, responde com status 404
       if (!deleted) {
