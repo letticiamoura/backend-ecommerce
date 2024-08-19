@@ -1,4 +1,5 @@
 import User from '../models/User.js';
+import bcrypt from 'bcryptjs';
 
 class UserRepository {
 
@@ -26,11 +27,19 @@ class UserRepository {
 
   //Criando um novo usuário
   async create(userData) {
+    //Hash da senha antes de criar o usuário
+    if (userData.password) {
+      userData.password = await bcrypt.hash(userData.password, 10);
+    }
     return this.handleRequest(User.create(userData), "Não foi possível cadastrar o usuário");
   }
 
   //Atualizando usuário por id
   async update(userData, id) {
+    if (userData.password) {
+      //Hash da senha antes de atualizar
+      userData.password = await bcrypt.hash(userData.password, 10);
+    }
     const [updatedRows] = await this.handleRequest(
       User.update(userData, { where: { id } }),
       "Não foi possível atualizar o usuário"

@@ -16,7 +16,7 @@ class UserController {
   //Método p/ obter um usuário específico pelo ID
   async show(req, res) {
     try {
-      //Chama o repositório para listar um usuário pelo ID
+      //Chama o repositório p/ listar um usuário pelo ID
       const user = await UserRepository.findById(req.params.id);
       //Se o usuário não for encontrado, responde com status 404
       if (!user) {
@@ -54,7 +54,7 @@ class UserController {
     }
   }
 
-  //Método p/ deletar um usuário
+  //Método para deletar um usuário
   async delete(req, res) {
     try {
       //Chama o repositório p/ apagar o usuário pelo ID
