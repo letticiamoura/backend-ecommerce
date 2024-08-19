@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
-dotenv.config();
 import { Sequelize } from 'sequelize';
+
+dotenv.config();
 
 //Variáveis de acesso
 const database = process.env.DATABASE;
@@ -43,5 +44,16 @@ export const consult = async (sql, values = [], msgReject) => {
     throw new Error(msgReject);
   }
 };
+
+
+// Sincroniza todos os modelos definidos com o banco de dados
+sequelize.sync({ force: false })  // force: true' recria tabelas, 'false' não altera tabelas existentes
+  .then(() => {
+    console.log('Tabelas criadas com sucesso.');
+  })
+  .catch((error) => {
+    console.error('Erro ao criar tabelas:', error);
+  });
+
 
 export default sequelize;

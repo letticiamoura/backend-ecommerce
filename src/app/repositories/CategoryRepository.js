@@ -13,7 +13,7 @@ class CategoryRepository {
   }
 
   //Listando todas as categorias com filtros e paginação
-  async findAll(limit = 12, page = 1, fields = ['name', 'slug'], useInMenu = null) {
+  async findAll(limit = 10, page = 1, fields = ['name', 'slug'], useInMenu = null) {
     const query = {}; 
     if (useInMenu !== null) {
       query.use_in_menu = useInMenu;

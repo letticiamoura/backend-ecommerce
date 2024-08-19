@@ -1,12 +1,23 @@
 import ProductRepository from "../repositories/ProductRepository.js";
 
+
 class ProductController {
 
   //Método p/ listar todos os produtos
   async index(req, res) {
+
+
+    const limitParam = parseInt(req.query.limit, 10) || 12;
+    const pageParam = parseInt(req.query.page, 10) || 1;
+    const fieldsParamString = req.query.fields; // Isso será uma string como 'electronics,home-appliances,books'
+    const matchParam = req.query.match;
+
+    // Converte a string em um array de strings
+    const fieldsParam = fieldsParamString ? fieldsParamString.split(',') : [];
+    
     try {
       //Chamando o repositório p/ listar todos os produtos
-      const products = await ProductRepository.findAll();
+      const products = await ProductRepository.findAll({limitParam, pageParam, fieldsParam, matchParam});
       res.status(200).json(products);
     } catch (err) {
       res.status(500).json({ error: err.message });
