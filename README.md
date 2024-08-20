@@ -25,7 +25,7 @@
 ## ⚙️Configurando o BD
 
 1. Criar um banco de dados
-2. Criar as tabelas necesárias 
+2. Criar as tabelas necesárias ou gerar pelo Sequelize automaticamente
    ```
       CREATE TABLE users (
 	      id INT PRIMARY KEY AUTO_INCREMENT,
@@ -104,6 +104,7 @@
     ```
 
 ## Postman 
+[Arquivo Postman](https://drive.google.com/drive/folders/1OHtGiv2Z4uZHyU7TOGDRe7LbOX9thVJ_) ↗
 
 <details>
 <summary>Rotas Usuário</summary>
@@ -146,7 +147,7 @@ Métodos GET, PUT e DELETE <br />
 ## Créditos
 > [Requisitos do Projeto](https://github.com/digitalcollegebr/projeto-backend) ↗
 
->  Contribuintes 👩‍💻
+>  Contribuinte 👩‍💻
 
 <table>
   <tr>
@@ -156,13 +157,6 @@ Métodos GET, PUT e DELETE <br />
       <br/>
       <a href="https://github.com/letticiamoura" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
       <a href="https://www.linkedin.com/in/leticia-moura-2157891a6/" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/Linkedin-0b7cb0?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
-    </td>
-    <td align="center" width="50%">
-      <img width="30%" src="https://github.com/user-attachments/assets/6dee6180-cffb-440d-b535-02eed04c6071"/><br>
-      <strong>Thaina Moreira Ludgero</strong><br>
-      <br />
-      <a href="https://github.com/ThainaLudgero" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
-      <a href="https://www.linkedin.com/in/thainámoreira/" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/Linkedin-0b7cb0?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
     </td>
   </tr>
 </table>
