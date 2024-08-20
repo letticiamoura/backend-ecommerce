@@ -106,27 +106,6 @@
 ## Postman 
 [Arquivo Postman](https://drive.google.com/drive/folders/1OHtGiv2Z4uZHyU7TOGDRe7LbOX9thVJ_) ↗
 
-<details>
-<summary>Rotas Usuário</summary>
-Métodos GET e POST <br />
-	/users <br />
-Métodos GET, PUT e DELETE <br />
-	/users/:id <br />
-</details>
-<details>
-<summary>Rotas Categorias</summary>
-Métodos GET e POST <br />
-	/category <br />
-Métodos GET, PUT e DELETE <br />
-	/category/:id <br />
-</details>
-<details>
-<summary>Rotas Produto</summary>
-Métodos GET e POST <br />
-	/products <br />
-Métodos GET, PUT e DELETE <br />
-	/products/:id <br />
-</details>
 
 #### Status Code
 
