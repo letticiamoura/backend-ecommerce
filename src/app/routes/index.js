@@ -5,6 +5,10 @@ import ProductController from "../controllers/ProductController.js";
 import CategoryController from "../controllers/CategoryController.js";
 import ProductImageController from "../controllers/ProductImageController.js";
 import ProductOptionController from "../controllers/ProductOptionController.js";
+//import AuthController from "../controllers/AuthController.js";
+
+//import jwt from 'jsonwebtoken';
+
 
 const router = Router();
 
@@ -17,7 +21,7 @@ router.get('/v1/users', UserController.index);
 router.get('/v1/users/:id', UserController.show);
 
 //Método POST
-router.post('/v1/users', UserController.store);
+router.post('/v1/users', UserController.store)
 
 //Método PUT
 router.put('/v1/users/:id', UserController.update);
@@ -25,8 +29,12 @@ router.put('/v1/users/:id', UserController.update);
 //Método DELETE
 router.delete('/v1/users/:id', UserController.delete);
 
+//Authorization Token
+// Rota para autenticar um usuário e gerar um token
+//router.post('/v1/user/token', AuthController.generateToken);
 
-//          PRODUCTS
+
+//         PRODUCTS
 
 //Método GET
 router.get('/v1/products/search', ProductController.index);
